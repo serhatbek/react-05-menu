@@ -7,7 +7,7 @@ const Menu = ({ items }) => {
         const { title, desc, img, price, id } = item;
 
         return (
-          <div key={id} className='menu-item'>
+          <div className='menu-item' key={id}>
             <img src={img} alt={title} className='photo' />
             <div className='item-info'>
               <header>

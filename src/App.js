@@ -2,14 +2,15 @@ import './App.css';
 
 import { useState } from 'react';
 import Categories from './components/Categories';
-import Menu from './components/Menu';
 import items from './data';
+import Menu from './components/Menu';
 
 const allCategories = ['all', ...new Set(items.map((item) => item.category))];
+console.log(allCategories);
 
 function App() {
   const [menuItems, setMenuItems] = useState(items);
-  const [categories, setCategories] = useState(allCategories);
+  const [categories, setCategories] = useState([]);
 
   const filterItems = (category) => {
     if (category === 'all') {
@@ -27,7 +28,7 @@ function App() {
           <h2>Our Menu</h2>
           <div className='underline'></div>
         </div>
-        <Categories categories={categories} filterItems={filterItems} />
+        <Categories allCategories={allCategories} filterItems={filterItems} />
         <Menu items={menuItems} />
       </section>
     </main>
