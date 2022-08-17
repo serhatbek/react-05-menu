@@ -8,8 +8,6 @@ import Menu from './components/Menu';
 function App() {
   const [menuItems, setMenuItems] = useState(menu);
 
-  console.log('app items', menuItems);
-
   return (
     <main>
       <section className='menu section'>
